@@ -1,0 +1,31 @@
+[tool.poetry]
+name = "medimetrics"
+version = "0.1.0"
+description = "Medical Image Metrics"
+authors = "Melanie Dohmen"
+readme = "README.md"
+
+
+[tool.poetry.dependencies]
+python = "~3.9.6"
+numpy = "^1.24.2"
+pillow = "^11.0.0"
+scipy = "1.11.4"
+torch = { version = "2.0.1", source="torch"}
+torchvision = { version = "0.15.2", source="torch"}
+lpips = "^0.1.4"
+brisque = "^0.0.16"
+scikit-image = "0.22.0"
+opencv-python = "4.9.0.80"
+elasticdeform = "^0.5.1"
+
+[[tool.poetry.source]]
+name = "torch"
+url = "https://download.pytorch.org/whl/cu118"
+secondary = true
+
+[tool.poetry.group.dev.dependencies]
+nibabel = "^5.0.1"
+pytest = "^8.3.3"
+pre-commit = "^4.0.1"
+pyrootutils = "^1.0.4"

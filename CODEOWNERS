@@ -1,0 +1,7 @@
+# These owners will be the default owners for everything in
+# the repo. Unless a later match takes precedence, the following
+# github users will be requested for review when someone opens a pull request.
+# Order is important; the last matching pattern takes the most
+# precedence.
+
+*   @melanie-dohmen-bayer @MatthiasLen
