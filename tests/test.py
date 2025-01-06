@@ -18,6 +18,7 @@ from medimetrics.distortions import (
     Translation,
 )
 from medimetrics.metrics import (
+    AHIQ,
     BRISQUE,
     CWSSIM,
     DICE,
@@ -58,6 +59,8 @@ def test_all_metrics() -> None:
         DISTS: 0.29267913,
         NMI: 1.03907630,
         PCC: 0.4285577,
+        AHIQ: 0.0,
+        VIF: 0.0,
     }
 
     non_ref_metrics: Dict[Type[NonRefMetric], float] = {

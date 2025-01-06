@@ -1,3 +1,4 @@
+from medimetrics.metrics.ahiq import AHIQ
 from medimetrics.metrics.blur_effect import BlurEffect
 from medimetrics.metrics.blur_ratio import BlurRatio, MeanBlur
 from medimetrics.metrics.blur_widths import BlurCPBD, BlurJNB, BlurWidths
@@ -16,4 +17,5 @@ from medimetrics.metrics.pcc import PCC
 from medimetrics.metrics.psnr import PSNR
 from medimetrics.metrics.ssim import MSSSIM, SSIM
 from medimetrics.metrics.total_var import MeanTotalVar
+from medimetrics.metrics.vif import VIF
 from medimetrics.metrics.var_laplace import VarLaplace

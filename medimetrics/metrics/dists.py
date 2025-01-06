@@ -11,7 +11,6 @@ from medimetrics.base import FullRefMetric
 
 root = pyrootutils.setup_root(__file__, indicator=".project-root", pythonpath=True, dotenv=True)
 
-
 class L2pooling(torch.nn.Module):
     def __init__(self, filter_size: int = 5, stride: int = 2, channels: int = None, pad_off: int = 0):
         super().__init__()

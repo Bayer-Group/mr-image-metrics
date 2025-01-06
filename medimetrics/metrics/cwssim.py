@@ -253,7 +253,7 @@ class CWSSIM(FullRefMetric):
         for i in range(imgSize):
             ind[i] = (i + sgn * ((imgSize - 1) // 2)) % imgSize
 
-        return torch.Tensor(np.array(ind)).to(torch.long)
+        return torch.Tensor(ind).to(torch.long)
 
     ##########
     def sp5_filters(self) -> Dict[str, np.ndarray]:

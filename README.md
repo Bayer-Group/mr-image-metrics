@@ -11,8 +11,8 @@ submitted to Nature Scientific Reports
 Clone repository
 
 ```
-cd into iml-medical-image-metrics
-pip install medimetrics
+cd into mr-image-metrics
+pip install .
 ```
 
 # Example Usage
@@ -73,6 +73,7 @@ print(blur_effect.compute(image_test_blurred))
   - Maes, F., Collignon, A., Vandermeulen, D., Marchal, G. & Suetens, P. Multimodality image registration by maximization of mutual information. IEEE Transactions on Med. Imaging 16, 187–198, DOI: 10.1109/42.563664 (1997).
   - Implementation adapted from [scikit-image](https://scikit-image.org/docs/stable/api/skimage.metrics.html#skimage.metrics.normalized__mutual__information)
 
+
 ## Non-Reference Metrics
 
 - __BlurWidths__:
@@ -116,6 +117,68 @@ print(blur_effect.compute(image_test_blurred))
 - __DICE__ : DICE
   - Dice, L. R. Measures of the amount of ecologic association between species. Ecology 26, 297–302, DOI: https://doi.org/10.2307/1932409 (1945).
   - Own implementation
+
+## Testing Reference Metrics (Branch: New Metrics)
+- __AHIQ__: Attention Hybrid Image Quality
+  - Lao, S, Gong, Y., Shi, S., Yang, S., Wu, T., Wang, J., Xia, W., Yang, Y. Attentions help CNNS see better: Attention based hybrid image quality assessment network. Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (2022) pp. 1140-1149
+  - https://github.com/IIGROUP/AHIQ
+- __DeepQA__: Deep Quality Assessment
+  - Kim, J., Lee, S., Deep Learning of human visual sensitivity in image quality assessment framework. Proceedings of the IEEE conference on  Computer Vision and Pattern Recognition (2017), pp. 1676-1684
+- __FSIM__: Feature Similarity
+  - Zhang, L., Zhang, L., Mou ,X., Zhang, D. FSIM: A feature similarity index for image quality assessment. IEEE Transactions on Image Processing 24 (2015) 2579-2591
+- __GMSD__: Gradient Magnitude Similarity Deviation
+  - Xue, W., Zhang, L., Mou, X., Bovik, A.C. Gradient magnitude similarity deviation: A highly efficient perceptual image quality index. IEEE Transactions on Image Processing 23 (2013) 684-695
+- __IFC__: Information Fidelity Criterion
+- __IWSSIM__: Information Content-Weighted SSIM
+- __JNB-SalCAR__:Just noticible blur (based) Saliency channel attention residual (network)
+  - Seo, S. Ki, S., Kim, M. A novel just-noticible blur-based saliency-channel attention residual network for full reference image quality predictions. IEEE Transactions on Circuits and Systems for Video Technology 31 (2020) 2602-2616
+- __MAD__: Most Apparent Distortion
+ - Larson, E.C., Chandler, D.M., Most apparent distortion: full-reference image quality assessment and the role of strategy. Journal of electronic imaging 19 (2010)
+- __NLQD__: Normalized Laplacian Quality ...?
+  - Laparra, V., Ballé J., Berardino, A., Simoncelli, E.P. Perceptual image quality assessment using a normalized laplacian pyramid. Electronic Imaging (2016) 1-6
+- __NQM__: Noise Quality Measure
+- __PieApp__: Perceptual image error Assessment (through) pairwise preference
+  -Prashnani, E., Cai, H., Mostofi, Y, Sen, P. PieApp: Perceptual image-error assessment through pairwise preference. Preceedings of the IEEE Conference on Computer Vision and Pattern Recognition (2018) pp. 1808-1817
+- __TFIQA-FR__: Transformers for image quality assessment (full reference)
+  - Zeng, C., Kwong, S. Combining CNN and transformers for full-reference and no-reference image quality assessment. Neurocomputing 549 (2023) 126437
+- __VIF__: Visual Information Fidelity
+  - H.R. Sheikh, A.C. Bovik and G. de Veciana, "An information fidelity criterion for image quality assessment using natural scene statistics," IEEE Transactions on Image Processing , vol.14, no.12pp. 2117- 2128, Dec. 2005.
+  (Sheikh, H.R., Bovik, A.C. Image Information and Visual Quality. IEEE Transactions on Image Processing 15 (2006) 430-444)
+  - https://github.com/pavancm/Visual-Information-Fidelity---Python
+- __VSI__: Visual Saliency-Induced Index
+  - Zhang, L., Shen, Y., Li, H. VSI: A visual saliency-induced index for perceptual image quality assessment. IEEE Transactions on Image Processing 23 (2014) 4270-4281
+- __VSNR__: Visual Signal-to-Noise Ratio
+
+## Testing Non-Reference Metrics (Branch: New Metrics)
+- __HFD__: Hierarchichal Feature Degradation
+  - Wu, J., Zeng, J, Liu, Y., Shi, G., Lin, W. Hierarchichal feature degradation based blind image quality assessment. Proceedings of the IEEE International Conference on Computer Vision Workshops (2017) pp. 510-517
+  - Code not available?
+- __PQR__: Probabilistic Quality Representation
+  - Zeng, H., Zhang, L., Bovik, A.C. Blind image quality assessment with a probabilistic quality representation IEEE International Conference on Image Processing (ICIP) (2018) pp.609-613
+  - Code not available?
+- __DIIVINE__: Distortion Identification-based Image Verity and INtegrity Evaluation
+  - Moorthy, A.K., Bovik, A.C. Blind Image Quality Assessment: From Natural Scene Statistics to Perceptual Quality. IEEE Transactions on Image Processing (2011) vol. 20, no. 12, pp. 3350-3364
+- __BLIINDS-II__: 
+  - Saad, M.A., Bovik, A.C. and Charrier, C. Blind image quality assessment: A natural scene statistics approach in den DCT domain. IEEE Transactions on Image Processing  21 (2012) 3339-3352
+- __ILNIQE__:
+  - Zhang, L., Bovik, A.C. A feature-enriched completely blind image quality evaluator
+- __BIECON__:
+  - Kim, J. and Lee, S. Fully deep blind image quality prediction
+- __MEON__:
+  - Ma, K., Liu, W., Zhang, K., Duanmu, Z., Wang, Z. and Zuo, W. End-to-End blind image quality assessment using deep neural networks.
+- __WaDIQaM__:
+  - 
+- __DBCNN__:
+  -
+- __TIQA__:
+  - 
+- __MetaIQA__:
+  -
+- __P2P-BM__:
+  -
+- __HyperIQA__:
+  -
+
 
 # Distortions
 
