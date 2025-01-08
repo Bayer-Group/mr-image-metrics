@@ -35,6 +35,7 @@ from medimetrics.metrics import (
     PCC,
     PSNR,
     SSIM,
+    VIF,
     BlurCPBD,
     BlurEffect,
     BlurJNB,
@@ -48,6 +49,10 @@ from medimetrics.metrics import (
 
 def test_all_metrics() -> None:
     full_ref_metrics: Dict[Type[FullRefMetric], float] = {
+        # Testing:
+        AHIQ: -159.25221252441406,
+        VIF: 0.0,
+        #
         SSIM: 0.0921228,
         MSSSIM: 0.1670256858,
         CWSSIM: 0.54867559671,
@@ -59,8 +64,6 @@ def test_all_metrics() -> None:
         DISTS: 0.29267913,
         NMI: 1.03907630,
         PCC: 0.4285577,
-        AHIQ: 0.0,
-        VIF: 0.0,
     }
 
     non_ref_metrics: Dict[Type[NonRefMetric], float] = {
