@@ -12,7 +12,7 @@ from pyrtools.pyramids.c.wrapper import corrDn
 from medimetrics.base import FullRefMetric
 
 
-def vifvec(imref_batch: torch.Tensor, imdist_batch: torch.Tensor) -> np.ndarray:
+def vifvec(imref_batch: np.ndarray, imdist_batch: np.ndarray) -> np.ndarray:
     M = 3
     subbands = [4, 7, 10, 13, 16, 19, 22, 25]
     sigma_nsq = 0.4
