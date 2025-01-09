@@ -54,8 +54,8 @@ def vifvec(imref_batch: np.ndarray, imdist_batch: np.ndarray) -> np.ndarray:
             sub = subbands[i]
 
             # size of window used in distortion channel estimation
-            lev = np.ceil((sub - 1) / 6)
-            winsize = 2**lev + 1
+            lev = int(np.ceil((sub - 1) / 6))
+            winsize = int(2**lev + 1)
             win = np.ones([winsize, winsize])
 
             # y = org.[sub-1]
@@ -64,14 +64,14 @@ def vifvec(imref_batch: np.ndarray, imdist_batch: np.ndarray) -> np.ndarray:
             yn = dist.pyr_coeffs[(lev, sub)]
 
             # force subband to be a multiple of M
-            newsize = [np.floor(y.shape[0] / M) * M, np.floor(y.shape[1] / M) * M]
+            newsize = [int(np.floor(y.shape[0] / M) * M), int(np.floor(y.shape[1] / M) * M)]
             y = y[: newsize[0], : newsize[1]]
             yn = yn[: newsize[0], : newsize[1]]
 
             # correlation with downsampling
             winstep = (M, M)
-            winstart = (np.floor(M / 2), np.floor(M / 2))
-            winstop = (y.shape[0] - np.ceil(M / 2) + 1, y.shape[1] - np.ceil(M / 2) + 1)
+            winstart = (int(np.floor(M / 2)), int(np.floor(M / 2)))
+            winstop = (y.shape[0] - int(np.ceil(M / 2)) + 1, y.shape[1] - int(np.ceil(M / 2)) + 1)
 
             # mean
             mean_x = corrDn(y, win / np.sum(win), "reflect1", winstep, winstart, winstop)
@@ -214,7 +214,20 @@ class VIF(FullRefMetric):
         """
 
         # device = torch.device("cuda") if torch.cuda.is_available() else torch.device("cpu")
-        image_true_T = torch.Tensor(image_true.copy()).unsqueeze(0).repeat(3, 1, 1).unsqueeze(0)
-        image_test_T = torch.Tensor(image_test.copy()).unsqueeze(0).repeat(3, 1, 1).unsqueeze(0)
+        image_true_T = torch.Tensor(image_true.copy())
+        image_test_T = torch.Tensor(image_test.copy())
 
         return vifvec(image_true_T, image_test_T)[0]
+
+
+if __name__ == "__main__":
+    from medimetrics.distortions import GaussianBlur
+
+    # create test images:
+    image_true = np.random.rand(240, 240)
+    vif = VIF()
+    blur = GaussianBlur(10)
+    for s in range(10):
+        image_test = blur(image_true, s)
+
+        print(s, ": ", vif.compute(image_true, image_test))

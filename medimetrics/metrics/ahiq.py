@@ -152,7 +152,10 @@ class SaveOutput:
 
 
 class AHIQ(FullRefMetric):
-    def __init__(self, patch_size: int = 8, crop_size: int = 224, n_ensemble: int = 20) -> None:
+    def __init__(self, patch_size: int = 8, crop_size: int = 224, n_ensemble: int = 9) -> None:
+
+        # use ensemble = 20 (> 9) for random patch cropping
+
         # default options
         self.patch_size = patch_size
         self.crop_size = crop_size
@@ -252,7 +255,7 @@ class AHIQ(FullRefMetric):
             #    f.write(line)
 
         # no squeeze needed?
-        return pred
+        return pred.cpu().numpy().squeeze()
 
 
 if __name__ == "__main__":
@@ -263,6 +266,6 @@ if __name__ == "__main__":
     ahiq = AHIQ()
     blur = GaussianBlur(10)
     for s in range(10):
-        image_test = blur(image_true, 5)
+        image_test = blur(image_true, s)
 
         print(s, ": ", ahiq.compute(image_true, image_test))
