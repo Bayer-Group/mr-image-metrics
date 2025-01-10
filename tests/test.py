@@ -18,13 +18,17 @@ from medimetrics.distortions import (
     Translation,
 )
 from medimetrics.metrics import (
-    AHIQ,
     BRISQUE,
     CWSSIM,
     DICE,
     DISTS,
+    DSS,
+    FSIM,
+    GMSD,
+    IWSSIM,
     LPIPS,
     MAE,
+    MDSI,
     MLC,
     MSE,
     MSLC,
@@ -36,11 +40,13 @@ from medimetrics.metrics import (
     PSNR,
     SSIM,
     VIF,
+    VSI,
     BlurCPBD,
     BlurEffect,
     BlurJNB,
     BlurRatio,
     BlurWidths,
+    HaarPSI,
     MeanBlur,
     MeanTotalVar,
     VarLaplace,
@@ -50,8 +56,14 @@ from medimetrics.metrics import (
 def test_all_metrics() -> None:
     full_ref_metrics: Dict[Type[FullRefMetric], float] = {
         # Testing:
-        #AHIQ: 14.824321, #329.70166, #0.29557088, #-139.20703, #-159.25221252441406,
+        DSS: 0.0,
+        FSIM: 0.0,
+        GMSD: 0.0,
+        HaarPSI: 0.3799610137939,
+        IWSSIM: 0.0,
+        MDSI: 0.0,
         VIF: 0.0,
+        VSI: 0.0,
         #
         SSIM: 0.0921228,
         MSSSIM: 0.1670256858,

@@ -1,13 +1,13 @@
-from typing import Any
+from typing import Any, List, Tuple
 
 import numpy as np
 import torch
-from piq import vif_p
+from piq import dss
 
 from medimetrics.base import FullRefMetric
 
 
-class VIF(FullRefMetric):
+class DSS(FullRefMetric):
     def __init__(self) -> None:
         pass
 
@@ -36,5 +36,5 @@ class VIF(FullRefMetric):
         image_test_T = torch.Tensor(image_test.copy()).unsqueeze(0).unsqueeze(0)
 
         # Needs input (B, C, H, W)
-        metric_score = vif_p(image_true_T, image_test_T, data_range=data_range).item()
+        metric_score = dss(image_true_T, image_test_T, data_range=data_range).item()
         return metric_score
