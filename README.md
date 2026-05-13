@@ -2,9 +2,8 @@
 
 This repository provides the metrics and distortions, that were presented in the paper:
 
-M. Dohmen, M. Klemens, T. Truong, I. Baltruschat, M. Lenga: "Similarity and Quality Metrics for MR Image-to-Image Translation"
-submitted to Nature Scientific Reports
-[(see preprint)](https://arxiv.org/abs/2405.08431)
+Dohmen, M., Klemens, M.A., Baltruschat, I.M. et al. Similarity and quality metrics for MR image-to-image translation. Sci Rep 15, 3853 (2025).
+[https://doi.org/10.1038/s41598-025-87358-0](https://doi.org/10.1038/s41598-025-87358-0)
 
 # Installation
 
